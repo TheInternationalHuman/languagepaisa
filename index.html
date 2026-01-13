@@ -1,119 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¡Neta! ¡Así se habla inglés!</title>
 
   <style>
+    /* Reset & base */
     body {
       margin: 0;
-      background: #ffffff;
-      color: #222222;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.7;
+      color: #222;
+      background: #ffffff;
     }
 
-    .page {
-      max-width: 520px;
+    a {
+      text-decoration: none;
+    }
+
+    /* Container for main content */
+    .container {
+      display: flex;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 72px 20px;
-      text-align: center;
+      padding: 60px 20px;
+      gap: 60px;
+      align-items: flex-start;
+      justify-content: center;
     }
 
-    .cover {
-      max-width: 240px;
-      width: 100%;
-      margin: 0 auto 48px;
-      display: block;
-      border-radius: 4px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    /* Book image */
+    .book-image {
+      flex: 1;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+
+    /* Text content */
+    .content {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
     h1 {
-      font-size: 2.1rem;
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0;
+      color: #111;
     }
 
     p {
       font-size: 1.05rem;
-      margin-bottom: 36px;
-      color: #444444;
+      color: #444;
+      margin: 0;
     }
 
     .cta {
       display: inline-block;
-      padding: 16px 36px;
-      font-size: 1.05rem;
+      padding: 18px 40px;
+      font-size: 1.1rem;
       font-weight: 600;
-      color: #ffffff;
-      background: #111111;
+      color: #fff;
+      background: #111;
       border-radius: 8px;
-      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     .cta:hover {
       opacity: 0.9;
+      transform: translateY(-2px);
     }
 
     .note {
-      margin-top: 14px;
       font-size: 0.9rem;
-      color: #666666;
+      color: #666;
     }
 
     footer {
-      margin-top: 96px;
+      margin-top: 80px;
+      text-align: center;
       font-size: 0.85rem;
-      color: #777777;
+      color: #777;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.9rem;
+    /* Responsive layout */
+    @media (max-width: 850px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .book-image {
+        max-width: 220px;
+        margin-bottom: 32px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
+  <main class="container">
 
-    <!-- BOOK COVER -->
-    <img src="neta-asi-se-habla-ingles.jpg" alt="Description of image">
+    <!-- BOOK IMAGE -->
+    <img src="neta-asi-se-habla-ingles.jpg" alt="¡Neta! ¡Así se habla inglés! Book Cover" class="book-image">
 
+    <!-- TEXT CONTENT -->
+    <div class="content">
+      <h1>¡Neta! ¡Así se habla inglés!</h1>
+      
+      <p>
+        Esta guía híbrida está hecha para hispanohablantes que ya están hartos de estudiar inglés y no sonar naturales al hablarlo. Aquí no hay rodeos. El libro combina lecciones claras y directas con videos que te muestran cómo se habla el inglés de verdad, con la pronunciación, la entonación y el ritmo que usan los hablantes nativos. Cada lección va al punto, con ejemplos prácticos y acompañamiento en video para que practiques, corrijas tu acento y ganes confianza desde el primer día. Ideal para autodidactas, estudiantes o cualquiera que quiera pulir su pronunciación, corregir su acento y sonar más natural al hablar inglés en situaciones reales. Este libro de ejercicios híbrido conecta la teoría con el inglés que se usa en la calle, en el trabajo y en la vida diaria.
+      </p>
 
-    <!-- HEADLINE -->
-    <h1>Improve your English the fun way!</h1>
+      <p>
+        <strong>Importante:</strong> Este no es un libro de gramática. El enfoque está en la pronunciación, la entonación, el ritmo y la reducción del acento al hablar inglés, para que cuando agarres la onda, todo el mundo diga de ti: “¡Neta! ¡Así se habla inglés!”
+      </p>
 
-    <!-- SHORT DESCRIPTION -->
-    <p>
-      A practical English book for Spanish speakers who want to move beyond textbook rules and understand everyday, natural English.
-    </p>
+      <a href="https://www.amazon.com/dp/B0GDYX1P31" target="_blank" rel="noopener noreferrer" class="cta">
+        Comprar en Amazon
+      </a>
 
-    <!-- CTA -->
-    <a
-      class="cta"
-      href="https://www.amazon.com/dp/B0GDYX1P31"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Buy on Amazon
-    </a>
-
-    <div class="note">
-      Paperback and Kindle available. Secure checkout on Amazon.
+      <div class="note">
+        Disponible en formato paperback y Kindle. Pago seguro a través de Amazon.
+      </div>
     </div>
 
-    <footer>
-      <p>
-        Amazon handles payment, shipping, and customer support.
-      </p>
-    </footer>
-
   </main>
+
+  <footer>
+    Amazon maneja el pago, envío y atención al cliente.
+  </footer>
 </body>
 </html>
-
