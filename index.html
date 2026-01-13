@@ -1,128 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Neta! ¡Así se habla inglés!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Neta! ¡Así se habla inglés!</title>
 
-  <style>
-    /* Reset & base */
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-      color: #222;
-      background: #ffffff;
-    }
+<style>
+  /* Base styles */
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #222;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* subtle gradient */
+  }
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    /* Container for main content */
+  .container {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    gap: 60px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* Book image with subtle shadow/bokeh */
+  .book-image-wrapper {
+    flex: 1;
+    position: relative;
+  }
+
+  .book-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    background: radial-gradient(circle at center, rgba(0,0,0,0.05), transparent 70%);
+    border-radius: 12px;
+    filter: blur(20px);
+    z-index: 0;
+  }
+
+  .book-image {
+    position: relative;
+    z-index: 1;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .book-image:hover {
+    transform: translateY(-4px) scale(1.02); /* subtle hover effect */
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  }
+
+  /* Text content */
+  .content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #111;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #444;
+    margin: 0;
+  }
+
+  p strong {
+    font-size: 1.15rem;
+    color: #111;
+  }
+
+  /* CTA button */
+  .cta {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #28A745; /* green */
+    border-radius: 8px;
+    width: auto;
+    text-align: center;
+    margin-top: 16px; /* spacing from text */
+    transition: all 0.3s ease;
+  }
+
+  .cta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .note {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  footer {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+  }
+
+  /* Responsive layout */
+  @media (max-width: 900px) {
     .container {
-      display: flex;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      gap: 60px;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    /* Book image */
-    .book-image {
-      flex: 1;
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.15);
-      object-fit: cover;
-    }
-
-    /* Text content */
-    .content {
-      flex: 2;
-      display: flex;
       flex-direction: column;
-      gap: 24px;
+      align-items: center;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin: 0;
-      color: #111;
+    .content {
+      text-align: center;
+    }
+
+    .book-image-wrapper {
+      margin-bottom: 32px;
+    }
+
+    .book-image {
+      max-width: 300px;
+    }
+
+    .cta {
+      width: 100%;
+      max-width: 260px;
+      margin: 16px auto 0 auto;
     }
 
     p {
-      font-size: 1.05rem;
-      color: #444;
-      margin: 0;
+      font-size: 1.15rem; /* slightly larger for readability on mobile */
     }
-
-    /* CTA button */
-    .cta {
-      display: inline-block;
-      padding: 14px 28px;  /* smaller padding for proportional button */
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #fff;
-      background: #111;
-      border-radius: 8px;
-      text-align: center;
-      width: auto;          /* auto width to fit text */
-      transition: all 0.3s ease;
-    }
-
-    .cta:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-
-    .note {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    footer {
-      margin-top: 80px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-    }
-
-    /* Responsive layout */
-    @media (max-width: 850px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .content {
-        text-align: center;
-      }
-
-      .book-image {
-        max-width: 220px;
-        margin-bottom: 32px;
-      }
-
-      .cta {
-        width: 100%;
-        max-width: 260px;
-        margin: 0 auto;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
   <main class="container">
 
-    <!-- BOOK IMAGE (added versioning to bypass cache) -->
-    <img src="neta-asi-se-habla-ingles.png?v=2" alt="¡Neta! ¡Así se habla inglés! Book Cover" class="book-image">
+    <!-- Book image with bokeh effect wrapper -->
+    <div class="book-image-wrapper">
+      <img src="neta-asi-se-habla-ingles.png?v=2" alt="¡Neta! ¡Así se habla inglés! Book Cover" class="book-image">
+    </div>
 
-    <!-- TEXT CONTENT -->
+    <!-- Text content -->
     <div class="content">
       <h1>¡Neta! ¡Así se habla inglés!</h1>
       
