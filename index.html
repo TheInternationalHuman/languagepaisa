@@ -60,14 +60,17 @@
       margin: 0;
     }
 
+    /* CTA button */
     .cta {
       display: inline-block;
-      padding: 18px 40px;
-      font-size: 1.1rem;
+      padding: 14px 28px;  /* smaller padding for proportional button */
+      font-size: 1.05rem;
       font-weight: 600;
       color: #fff;
       background: #111;
       border-radius: 8px;
+      text-align: center;
+      width: auto;          /* auto width to fit text */
       transition: all 0.3s ease;
     }
 
@@ -103,6 +106,12 @@
         max-width: 220px;
         margin-bottom: 32px;
       }
+
+      .cta {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
@@ -110,9 +119,8 @@
 <body>
   <main class="container">
 
-    <!-- BOOK IMAGE -->
-    <img src="neta-asi-se-habla-ingles.png" alt="¡Neta! ¡Así se habla inglés! Book Cover" class="book-image">
-
+    <!-- BOOK IMAGE (added versioning to bypass cache) -->
+    <img src="neta-asi-se-habla-ingles.png?v=2" alt="¡Neta! ¡Así se habla inglés! Book Cover" class="book-image">
 
     <!-- TEXT CONTENT -->
     <div class="content">
