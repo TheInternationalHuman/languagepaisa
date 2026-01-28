@@ -151,9 +151,9 @@
     </div>
 
     <nav class="py-6 px-6 md:px-12 flex justify-between items-center border-b border-stone-200 bg-white">
-        <div class="text-xl md:text-2xl font-bold tracking-widest uppercase serif italic text-slate-800">
+        <a href="/index.html" class="text-xl md:text-2xl font-bold tracking-widest uppercase serif italic text-slate-800 transition-all hover:text-amber-800">
             Language Paisa
-        </div>
+        </a>
         <div class="text-right">
             <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-slate-400 leading-none mb-1">Established</p>
             <p class="serif italic text-xs gold-accent">MMXXVI</p>
@@ -163,7 +163,7 @@
     <main class="max-w-4xl mx-auto w-full px-6 py-12 flex-grow">
         
         <div class="mb-10">
-            <a href="lessons.html" class="back-link text-[10px] uppercase font-bold text-slate-400 flex items-center gap-2">
+            <a href="/curso" class="back-link text-[10px] uppercase font-bold text-slate-400 flex items-center gap-2">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 Volver a la Malla Curricular
             </a>
@@ -176,30 +176,25 @@
         </header>
 
         <div id="quizContainer" class="quiz-container">
-            <!-- Progress bar -->
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill" style="width: 0%"></div>
             </div>
 
-            <!-- Question counter -->
             <div class="text-center mb-6">
-                <span class="text-sm uppercase tracking-wider text-slate-500" id="questionCounter">Pregunta 1 de 15</span>
+                <span class="text-sm uppercase tracking-wider text-slate-500" id="questionCounter">Pregunta 1 de 14</span>
             </div>
 
-            <!-- Questions will be inserted here -->
             <div id="questionsWrapper"></div>
 
-            <!-- Submit button -->
             <div class="text-center mt-8">
                 <button id="submitBtn" class="submit-btn" disabled>Calificar Evaluación</button>
             </div>
         </div>
 
-        <!-- Results section (hidden initially) -->
         <div id="resultsContainer" class="quiz-container" style="display: none;">
             <div class="results-card">
                 <h2 class="serif italic text-3xl mb-6">Resultados</h2>
-                <div class="score-display" id="scoreDisplay">0/15</div>
+                <div class="score-display" id="scoreDisplay">0/14</div>
                 <p class="text-xl mt-4 mb-8" id="scoreMessage"></p>
                 <button onclick="location.reload()" class="submit-btn">Intentar de Nuevo</button>
             </div>
@@ -318,20 +313,11 @@
 
         function selectOption(questionIndex, optionIndex) {
             if (isSubmitted) return;
-
             userAnswers[questionIndex] = optionIndex;
-
-            // Update button states for this question
             const buttons = document.querySelectorAll(`[data-question="${questionIndex}"]`);
-            buttons.forEach(btn => {
-                btn.classList.remove('selected');
-            });
+            buttons.forEach(btn => btn.classList.remove('selected'));
             buttons[optionIndex].classList.add('selected');
-
-            // Update progress
             updateProgress();
-
-            // Enable submit button if all questions answered
             checkAllAnswered();
         }
 
@@ -350,25 +336,15 @@
         function submitQuiz() {
             if (isSubmitted) return;
             isSubmitted = true;
-
             let correct = 0;
-
             questions.forEach((q, index) => {
                 const buttons = document.querySelectorAll(`[data-question="${index}"]`);
                 const feedback = document.getElementById(`feedback-${index}`);
-                
                 buttons.forEach((btn, optIndex) => {
                     btn.disabled = true;
-                    
-                    if (optIndex === q.correct) {
-                        btn.classList.add('correct');
-                    }
-                    
-                    if (optIndex === userAnswers[index] && userAnswers[index] !== q.correct) {
-                        btn.classList.add('incorrect');
-                    }
+                    if (optIndex === q.correct) btn.classList.add('correct');
+                    if (optIndex === userAnswers[index] && userAnswers[index] !== q.correct) btn.classList.add('incorrect');
                 });
-
                 if (userAnswers[index] === q.correct) {
                     correct++;
                     feedback.className = 'feedback correct';
@@ -378,8 +354,6 @@
                     feedback.textContent = `✗ Incorrecto. La respuesta correcta es: ${q.options[q.correct]}`;
                 }
             });
-
-            // Show results
             showResults(correct);
         }
 
@@ -387,32 +361,17 @@
             document.getElementById('quizContainer').style.display = 'none';
             document.getElementById('resultsContainer').style.display = 'block';
             document.getElementById('scoreDisplay').textContent = `${correct}/${questions.length}`;
-
             const percentage = (correct / questions.length) * 100;
-            let message = '';
-            
-            if (percentage === 100) {
-                message = '¡Excelente! Dominio perfecto del contenido.';
-            } else if (percentage >= 80) {
-                message = '¡Muy bien! Buen dominio del material.';
-            } else if (percentage >= 60) {
-                message = 'Bien. Continúa practicando para mejorar.';
-            } else {
-                message = 'Necesitas revisar el material nuevamente.';
-            }
-
+            let message = percentage === 100 ? '¡Excelente! Dominio perfecto del contenido.' :
+                          percentage >= 80 ? '¡Muy bien! Buen dominio del material.' :
+                          percentage >= 60 ? 'Bien. Continúa practicando para mejorar.' :
+                          'Necesitas revisar el material nuevamente.';
             document.getElementById('scoreMessage').textContent = message;
-
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Initialize quiz
         renderQuestions();
-
-        // Add submit button listener
         document.getElementById('submitBtn').addEventListener('click', submitQuiz);
     </script>
-
 </body>
 </html>
