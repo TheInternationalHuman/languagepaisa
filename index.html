@@ -40,13 +40,14 @@
             height: 1px;
             width: 60px;
             background: #b08d57;
-            margin: 20px 0;
+            margin: 12px 0;
         }
 
         .feature-list li {
             position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
         }
 
         .feature-list li::before {
@@ -58,82 +59,78 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased min-h-screen flex flex-col">
 
-    <div class="bg-navy py-2 text-center">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-amber-200/60 font-medium">Excelencia en el Aprendizaje de Idiomas</p>
+    <div class="bg-navy py-1.5 text-center">
+        <p class="text-[9px] tracking-[0.4em] uppercase text-amber-200/60 font-medium">Excelencia en el Aprendizaje de Idiomas</p>
     </div>
 
-    <nav class="py-10 px-12 flex justify-between items-center border-b border-stone-200 bg-white">
-        <div class="text-2xl font-bold tracking-widest uppercase serif italic text-slate-800">
+    <nav class="py-5 px-6 md:px-12 flex justify-between items-center border-b border-stone-200 bg-white">
+        <div class="text-lg md:text-xl font-bold tracking-widest uppercase serif italic text-slate-800">
             Language Paisa
         </div>
-        
         <div class="text-right">
-            <p class="text-[9px] uppercase tracking-[0.3em] font-bold text-slate-400 leading-none mb-1">Established</p>
+            <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-slate-400 leading-none mb-1">Established</p>
             <p class="serif italic text-xs gold-accent">MMXXVI</p>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-8 py-20 lg:py-32">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <main class="max-w-6xl mx-auto px-6 md:px-8 py-8 md:py-10 flex-grow">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
             
-            <div class="flex justify-center order-2 lg:order-1">
+            <div class="flex justify-center order-1 lg:order-1">
                 <div class="relative group">
-                    <div class="absolute -inset-4 bg-stone-200/40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <img src="neta-asi-se-habla-ingles.png?v=2" alt="¡Neta! ¡Así se habla inglés! Book Cover" 
-                         class="relative z-10 max-w-sm w-full rounded-sm book-shadow transform transition-transform duration-500 group-hover:scale-[1.01]">
+                    <img src="neta-asi-se-habla-ingles.png?v=2" alt="Book Cover" 
+                         class="relative z-10 max-h-[50vh] lg:max-h-[70vh] w-auto rounded-sm book-shadow transform transition-transform duration-500 group-hover:scale-[1.01]">
                 </div>
             </div>
 
-            <div class="order-1 lg:order-2">
-                <span class="text-xs uppercase tracking-[0.4em] gold-accent font-bold mb-4 block">Guía Híbrida</span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 italic serif">¡Neta! ¡Así se habla inglés!</h1>
+            <div class="order-2 lg:order-2">
+                <span class="text-[10px] uppercase tracking-[0.4em] gold-accent font-bold mb-2 block leading-none">Guía Híbrida</span>
+                <h1 class="text-3xl lg:text-5xl leading-tight mb-4 italic serif">¡Neta! ¡Así se habla inglés!</h1>
                 
                 <div class="decorative-line"></div>
 
-                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                <div class="space-y-4 text-slate-600 leading-snug text-base lg:text-lg">
                     <p>
-                        Esta guía híbrida está hecha para hispanohablantes que ya están hartos de estudiar inglés y no sonar naturales al hablarlo. Aquí no hay rodeos.
+                        Esta guía híbrida está hecha para hispanohablantes que ya están hartos de estudiar inglés y no sonar naturales al hablarlo.
                     </p>
                     
-                    <div>
-                        <p class="font-semibold text-slate-900 mb-3">Este programa incluye:</p>
-                        <ul class="feature-list text-base">
-                            <li><strong>El libro:</strong> tu guía fácil de entender para aprender inglés de manera efectiva.</li>
-                            <li><strong>Videos acompañantes:</strong> te muestran cómo se habla el inglés de verdad, con la pronunciación, entonación y ritmo de los hablantes nativos.</li>
-                            <li><strong>Acceso exclusivo a un curso en línea:</strong> disponible solo para quienes compren este libro, con contenido adicional para reforzar tu aprendizaje.</li>
+                    <div class="text-sm lg:text-base">
+                        <p class="font-semibold text-slate-900 mb-2">Este programa incluye:</p>
+                        <ul class="feature-list">
+                            <li><strong>El libro:</strong> guía efectiva para aprender inglés.</li>
+                            <li><strong>Videos:</strong> pronunciación, entonación y ritmo real.</li>
+                            <li><strong>Curso exclusivo:</strong> contenido adicional para reforzar.</li>
                         </ul>
                     </div>
 
-                    <p class="text-base italic serif border-l-2 border-stone-200 pl-6 my-8">
-                        <strong>Importante:</strong> Este no es simplemente un libro. Es un programa súper único para ayudarte a agarrar la onda, para que todo el mundo diga de ti: “¡Neta! ¡Así se habla inglés!”
+                    <p class="text-sm lg:text-base italic serif border-l-2 border-stone-200 pl-4 my-4">
+                        <strong>Importante:</strong> Es un programa súper único para ayudarte a agarrar la onda, para que todo el mundo diga de ti: “¡Neta! ¡Así se habla inglés!”
                     </p>
                 </div>
 
-                <div class="mt-10">
-                    <div class="flex flex-col sm:flex-row items-center gap-6 mb-4">
-                        <a href="https://www.amazon.com/dp/B0GDYX1P31" target="_blank" class="cta-prestigious px-10 py-5 rounded-sm">
+                <div class="mt-6">
+                    <div class="flex flex-col sm:flex-row items-center gap-4 mb-2">
+                        <a href="https://www.amazon.com/dp/B0GDYX1P31" target="_blank" class="cta-prestigious w-full sm:w-auto px-8 py-4 rounded-sm text-center">
                             Comprar en Amazon
                         </a>
-                        <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">
+                        <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">
                             Paperback & Kindle
                         </span>
                     </div>
                     
-                    <p class="text-[11px] text-stone-500 italic mb-6">
-                        Amazon maneja el pago, envío y atención al cliente. Transacción segura garantizada.
+                    <p class="text-[10px] text-stone-500 italic">
+                        Amazon maneja el pago y envío. Transacción segura.
                     </p>
-                    
-                    <div class="decorative-line"></div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="border-t border-stone-200 py-20 bg-white text-center">
-        <div class="serif italic text-2xl text-slate-800 mb-2 font-medium">LanguagePaisa.com</div>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400">© 2026 Language Paisa • All Rights Reserved</p>
+    <footer class="border-t border-stone-200 py-8 bg-white text-center">
+        <div class="serif italic text-lg text-slate-800 font-medium">LanguagePaisa.com</div>
+        <p class="text-[9px] uppercase tracking-[0.3em] text-slate-400">© 2026 Language Paisa</p>
     </footer>
 
 </body>
