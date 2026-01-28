@@ -10,138 +10,21 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; margin: 0; }
         h1, h2, .serif { font-family: 'Playfair Display', serif; }
-        
         .bg-navy { background-color: #0a192f; }
         .gold-accent { color: #b08d57; }
-
-        .quiz-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .question-card {
-            background: white;
-            border: 1px solid #e7e5e4;
-            padding: 2rem;
-            border-radius: 4px;
-            margin-bottom: 2rem;
-        }
-
-        .option-btn {
-            width: 100%;
-            text-align: left;
-            padding: 1rem 1.5rem;
-            margin: 0.5rem 0;
-            border: 2px solid #e7e5e4;
-            background: white;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 1.1rem;
-        }
-
-        .option-btn:hover {
-            border-color: #b08d57;
-            background: #fcfaf7;
-        }
-
-        .option-btn.selected {
-            border-color: #0a192f;
-            background: #f8f9fa;
-        }
-
-        .option-btn.correct {
-            border-color: #16a34a;
-            background: #f0fdf4;
-            color: #166534;
-        }
-
-        .option-btn.incorrect {
-            border-color: #dc2626;
-            background: #fef2f2;
-            color: #991b1b;
-        }
-
-        .option-btn:disabled {
-            cursor: not-allowed;
-        }
-
-        .submit-btn {
-            background: #0a192f;
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            font-size: 0.875rem;
-        }
-
-        .submit-btn:hover {
-            background: #b08d57;
-        }
-
-        .submit-btn:disabled {
-            background: #d1d5db;
-            cursor: not-allowed;
-        }
-
-        .results-card {
-            background: white;
-            border: 2px solid #b08d57;
-            padding: 3rem;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .score-display {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #b08d57;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
-
-        .back-link {
-            transition: all 0.3s ease;
-            letter-spacing: 0.1em;
-        }
-        
-        .back-link:hover {
-            color: #b08d57;
-            padding-left: 5px;
-        }
-
-        .feedback {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .feedback.correct {
-            color: #16a34a;
-        }
-
-        .feedback.incorrect {
-            color: #dc2626;
-        }
-
-        .progress-bar {
-            height: 4px;
-            background: #e7e5e4;
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: #b08d57;
-            transition: width 0.3s ease;
-        }
+        .quiz-container { max-width: 700px; margin: 0 auto; }
+        .question-card { background: white; border: 1px solid #e7e5e4; padding: 2rem; border-radius: 4px; margin-bottom: 2rem; }
+        .option-btn { width: 100%; text-align: left; padding: 1rem 1.5rem; margin: 0.5rem 0; border: 2px solid #e7e5e4; background: white; border-radius: 4px; cursor: pointer; transition: all 0.2s ease; font-size: 1.1rem; }
+        .option-btn:hover { border-color: #b08d57; background: #fcfaf7; }
+        .option-btn.selected { border-color: #0a192f; background: #f8f9fa; }
+        .option-btn.correct { border-color: #16a34a; background: #f0fdf4; color: #166534; }
+        .option-btn.incorrect { border-color: #dc2626; background: #fef2f2; color: #991b1b; }
+        .submit-btn { background: #0a192f; color: white; padding: 1rem 2.5rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; text-transform: uppercase; font-size: 0.875rem; }
+        .submit-btn:hover { background: #b08d57; }
+        .back-link { transition: all 0.3s ease; letter-spacing: 0.1em; }
+        .back-link:hover { color: #b08d57; padding-left: 5px; }
+        .progress-bar { height: 4px; background: #e7e5e4; border-radius: 2px; overflow: hidden; margin-bottom: 2rem; }
+        .progress-fill { height: 100%; background: #b08d57; transition: width 0.3s ease; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
@@ -151,7 +34,7 @@
     </div>
 
     <nav class="py-6 px-6 md:px-12 flex justify-between items-center border-b border-stone-200 bg-white">
-        <a href="/index.html" class="text-xl md:text-2xl font-bold tracking-widest uppercase serif italic text-slate-800 transition-all hover:text-amber-800">
+        <a href="../index.html" class="text-xl md:text-2xl font-bold tracking-widest uppercase serif italic text-slate-800 transition-all hover:text-amber-800">
             Language Paisa
         </a>
         <div class="text-right">
@@ -163,7 +46,7 @@
     <main class="max-w-4xl mx-auto w-full px-6 py-12 flex-grow">
         
         <div class="mb-10">
-            <a href="/curso" class="back-link text-[10px] uppercase font-bold text-slate-400 flex items-center gap-2">
+            <a href="../curso.html" class="back-link text-[10px] uppercase font-bold text-slate-400 flex items-center gap-2">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 Volver a la Malla Curricular
             </a>
@@ -172,34 +55,26 @@
         <header class="mb-8">
             <span class="text-[10px] uppercase tracking-[0.4em] gold-accent font-bold mb-3 block">Sección 1 • Lección 1.1</span>
             <h1 class="text-4xl md:text-5xl leading-tight italic serif mb-4">Evaluación de Progreso</h1>
-            <p class="text-slate-500 italic serif text-lg">Responda a las siguientes preguntas para validar su dominio de la unidad.</p>
         </header>
 
         <div id="quizContainer" class="quiz-container">
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill" style="width: 0%"></div>
             </div>
-
-            <div class="text-center mb-6">
-                <span class="text-sm uppercase tracking-wider text-slate-500" id="questionCounter">Pregunta 1 de 14</span>
-            </div>
-
             <div id="questionsWrapper"></div>
-
             <div class="text-center mt-8">
                 <button id="submitBtn" class="submit-btn" disabled>Calificar Evaluación</button>
             </div>
         </div>
 
         <div id="resultsContainer" class="quiz-container" style="display: none;">
-            <div class="results-card">
-                <h2 class="serif italic text-3xl mb-6">Resultados</h2>
-                <div class="score-display" id="scoreDisplay">0/14</div>
+            <div class="results-card text-center bg-white p-12 border-2 border-amber-600 rounded-sm">
+                <h2 class="serif italic text-3xl mb-6 font-bold">Resultados</h2>
+                <div class="text-6xl gold-accent serif italic mb-4" id="scoreDisplay">0/14</div>
                 <p class="text-xl mt-4 mb-8" id="scoreMessage"></p>
-                <button onclick="location.reload()" class="submit-btn">Intentar de Nuevo</button>
+                <button onclick="location.reload()" class="submit-btn mt-6">Intentar de Nuevo</button>
             </div>
         </div>
-
     </main>
 
     <footer class="border-t border-stone-200 py-12 bg-white text-center mt-20">
@@ -209,76 +84,20 @@
 
     <script>
         const questions = [
-            {
-                question: "¿Cómo se dice 'Yo soy / estoy' en inglés?",
-                options: ["I am", "I be", "I is"],
-                correct: 0
-            },
-            {
-                question: "¿Cómo se dice 'Yo tengo' en inglés?",
-                options: ["I having", "I has", "I have"],
-                correct: 2
-            },
-            {
-                question: "¿Cómo se dice 'Yo hago' en inglés?",
-                options: ["I does", "I do", "I doing"],
-                correct: 1
-            },
-            {
-                question: "¿Cómo se dice 'Yo digo' en inglés?",
-                options: ["I say", "I says", "I said"],
-                correct: 0
-            },
-            {
-                question: "¿Cómo se dice 'Yo voy' en inglés?",
-                options: ["I going", "I goes", "I go"],
-                correct: 2
-            },
-            {
-                question: "¿Cómo se dice 'Yo consigo' en inglés?",
-                options: ["I get", "I gets", "I getting"],
-                correct: 0
-            },
-            {
-                question: "¿Cómo se dice 'Yo hago' en inglés?",
-                options: ["I makes", "I made", "I make"],
-                correct: 2
-            },
-            {
-                question: "¿Cómo se dice 'Yo tomo' en inglés?",
-                options: ["I takes", "I take", "I taking"],
-                correct: 1
-            },
-            {
-                question: "¿Cómo se dice 'Yo sé / conozco' en inglés?",
-                options: ["I knowing", "I know", "I knows"],
-                correct: 1
-            },
-            {
-                question: "¿Cómo se dice 'Yo veo' en inglés?",
-                options: ["I seeing", "I sees", "I see"],
-                correct: 2
-            },
-            {
-                question: "¿Cómo se dice 'Yo vengo' en inglés?",
-                options: ["I come", "I comes", "I came"],
-                correct: 0
-            },
-            {
-                question: "¿Cómo se dice 'Yo pienso' en inglés?",
-                options: ["I thinks", "I thinking", "I think"],
-                correct: 2
-            },
-            {
-                question: "¿Cómo se dice 'Yo miro' en inglés?",
-                options: ["I looking", "I look", "I looks"],
-                correct: 1
-            },
-            {
-                question: "¿Cómo se dice 'Yo quiero' en inglés?",
-                options: ["I wants", "I wanting", "I want"],
-                correct: 2
-            }
+            { question: "¿Cómo se dice 'Yo soy / estoy' en inglés?", options: ["I am", "I be", "I is"], correct: 0 },
+            { question: "¿Cómo se dice 'Yo tengo' en inglés?", options: ["I having", "I has", "I have"], correct: 2 },
+            { question: "¿Cómo se dice 'Yo hago' en inglés?", options: ["I does", "I do", "I doing"], correct: 1 },
+            { question: "¿Cómo se dice 'Yo digo' en inglés?", options: ["I say", "I says", "I said"], correct: 0 },
+            { question: "¿Cómo se dice 'Yo voy' en inglés?", options: ["I going", "I goes", "I go"], correct: 2 },
+            { question: "¿Cómo se dice 'Yo consigo' en inglés?", options: ["I get", "I gets", "I getting"], correct: 0 },
+            { question: "¿Cómo se dice 'Yo hago' en inglés?", options: ["I makes", "I made", "I make"], correct: 2 },
+            { question: "¿Cómo se dice 'Yo tomo' en inglés?", options: ["I takes", "I take", "I taking"], correct: 1 },
+            { question: "¿Cómo se dice 'Yo sé / conozco' en inglés?", options: ["I knowing", "I know", "I knows"], correct: 1 },
+            { question: "¿Cómo se dice 'Yo veo' en inglés?", options: ["I seeing", "I sees", "I see"], correct: 2 },
+            { question: "¿Cómo se dice 'Yo vengo' en inglés?", options: ["I come", "I comes", "I came"], correct: 0 },
+            { question: "¿Cómo se dice 'Yo pienso' en inglés?", options: ["I thinks", "I thinking", "I think"], correct: 2 },
+            { question: "¿Cómo se dice 'Yo miro' en inglés?", options: ["I looking", "I look", "I looks"], correct: 1 },
+            { question: "¿Cómo se dice 'Yo quiero' en inglés?", options: ["I wants", "I wanting", "I want"], correct: 2 }
         ];
 
         let userAnswers = new Array(questions.length).fill(null);
@@ -286,8 +105,6 @@
 
         function renderQuestions() {
             const wrapper = document.getElementById('questionsWrapper');
-            wrapper.innerHTML = '';
-
             questions.forEach((q, index) => {
                 const card = document.createElement('div');
                 card.className = 'question-card';
@@ -295,78 +112,51 @@
                     <h3 class="text-xl font-semibold mb-4">${index + 1}. ${q.question}</h3>
                     <div class="options">
                         ${q.options.map((option, optIndex) => `
-                            <button 
-                                class="option-btn" 
-                                data-question="${index}" 
-                                data-option="${optIndex}"
-                                onclick="selectOption(${index}, ${optIndex})"
-                            >
+                            <button class="option-btn" data-question="${index}" data-option="${optIndex}" onclick="selectOption(${index}, ${optIndex})">
                                 ${String.fromCharCode(65 + optIndex)}) ${option}
                             </button>
                         `).join('')}
                     </div>
-                    <div class="feedback" id="feedback-${index}"></div>
+                    <div class="feedback mt-2 font-bold" id="feedback-${index}"></div>
                 `;
                 wrapper.appendChild(card);
             });
         }
 
-        function selectOption(questionIndex, optionIndex) {
+        function selectOption(qIdx, oIdx) {
             if (isSubmitted) return;
-            userAnswers[questionIndex] = optionIndex;
-            const buttons = document.querySelectorAll(`[data-question="${questionIndex}"]`);
+            userAnswers[qIdx] = oIdx;
+            const buttons = document.querySelectorAll(`[data-question="${qIdx}"]`);
             buttons.forEach(btn => btn.classList.remove('selected'));
-            buttons[optionIndex].classList.add('selected');
-            updateProgress();
-            checkAllAnswered();
-        }
-
-        function updateProgress() {
+            buttons[oIdx].classList.add('selected');
             const answered = userAnswers.filter(a => a !== null).length;
-            const percentage = (answered / questions.length) * 100;
-            document.getElementById('progressFill').style.width = percentage + '%';
-            document.getElementById('questionCounter').textContent = `Pregunta ${answered} de ${questions.length} respondidas`;
-        }
-
-        function checkAllAnswered() {
-            const allAnswered = userAnswers.every(a => a !== null);
-            document.getElementById('submitBtn').disabled = !allAnswered;
+            document.getElementById('progressFill').style.width = (answered / questions.length) * 100 + '%';
+            document.getElementById('submitBtn').disabled = answered !== questions.length;
         }
 
         function submitQuiz() {
-            if (isSubmitted) return;
             isSubmitted = true;
-            let correct = 0;
+            let correctCount = 0;
             questions.forEach((q, index) => {
                 const buttons = document.querySelectorAll(`[data-question="${index}"]`);
                 const feedback = document.getElementById(`feedback-${index}`);
-                buttons.forEach((btn, optIndex) => {
+                buttons.forEach((btn, optIdx) => {
                     btn.disabled = true;
-                    if (optIndex === q.correct) btn.classList.add('correct');
-                    if (optIndex === userAnswers[index] && userAnswers[index] !== q.correct) btn.classList.add('incorrect');
+                    if (optIdx === q.correct) btn.classList.add('correct');
+                    if (optIdx === userAnswers[index] && userAnswers[index] !== q.correct) btn.classList.add('incorrect');
                 });
                 if (userAnswers[index] === q.correct) {
-                    correct++;
-                    feedback.className = 'feedback correct';
+                    correctCount++;
+                    feedback.className = 'feedback text-green-600';
                     feedback.textContent = '✓ Correcto';
                 } else {
-                    feedback.className = 'feedback incorrect';
-                    feedback.textContent = `✗ Incorrecto. La respuesta correcta es: ${q.options[q.correct]}`;
+                    feedback.className = 'feedback text-red-600';
+                    feedback.textContent = `✗ Incorrecto. La respuesta es: ${q.options[q.correct]}`;
                 }
             });
-            showResults(correct);
-        }
-
-        function showResults(correct) {
             document.getElementById('quizContainer').style.display = 'none';
             document.getElementById('resultsContainer').style.display = 'block';
-            document.getElementById('scoreDisplay').textContent = `${correct}/${questions.length}`;
-            const percentage = (correct / questions.length) * 100;
-            let message = percentage === 100 ? '¡Excelente! Dominio perfecto del contenido.' :
-                          percentage >= 80 ? '¡Muy bien! Buen dominio del material.' :
-                          percentage >= 60 ? 'Bien. Continúa practicando para mejorar.' :
-                          'Necesitas revisar el material nuevamente.';
-            document.getElementById('scoreMessage').textContent = message;
+            document.getElementById('scoreDisplay').textContent = `${correctCount}/${questions.length}`;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
