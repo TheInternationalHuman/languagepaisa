@@ -12,16 +12,26 @@
     <meta property="og:description" content="Deja de estudiar inglés y empieza a hablarlo. La guía definitiva para sonar natural.">
     <meta property="og:image" content="neta-asi-se-habla-ingles.png">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="¡Neta! ¡Así se habla inglés!">
-    <meta property="twitter:description" content="La guía efectiva para aprender inglés real y sonar natural.">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; margin: 0; }
         h1, h2, .serif { font-family: 'Playfair Display', serif; }
         
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: #b08d57;
+            color: white;
+            padding: 15px;
+            z-index: 100;
+            transition: top 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus { top: 0; }
+
         .bg-navy { background-color: #0a192f; }
         .gold-accent { color: #b08d57; }
         
@@ -48,18 +58,13 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .decorative-line {
-            height: 1px;
-            width: 60px;
-            background: #b08d57;
-            margin: 16px 0;
-        }
+        .decorative-line { height: 1px; width: 60px; background: #b08d57; margin: 16px 0; }
 
         .feature-list li {
             position: relative;
             padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
         }
 
         .feature-list li::before {
@@ -73,11 +78,15 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <div class="bg-navy py-2 text-center">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-amber-200 font-medium">Excelencia en el Aprendizaje de Idiomas</p>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <div class="bg-navy py-2 text-center" role="banner">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-amber-200 font-medium">
+            Excelencia en el Aprendizaje de Idiomas
+        </p>
     </div>
 
-    <nav class="py-6 px-6 md:px-12 flex justify-between items-center border-b border-stone-200 bg-white">
+    <nav class="py-6 px-6 md:px-12 flex justify-between items-center border-b border-stone-200 bg-white" role="navigation">
         <div class="text-xl md:text-2xl font-bold tracking-widest uppercase serif italic text-slate-800">
             Language Paisa
         </div>
@@ -87,9 +96,8 @@
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 md:px-8 py-12 md:py-16 flex-grow">
+    <main id="main-content" class="max-w-6xl mx-auto px-6 md:px-8 py-12 md:py-16 flex-grow">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            
             <div class="flex justify-center order-1 lg:order-1">
                 <div class="relative group">
                     <img src="neta-asi-se-habla-ingles.png?v=2" alt="Portada del libro ¡Neta! ¡Así se habla inglés! - Guía para aprender inglés natural" 
@@ -100,36 +108,28 @@
             <div class="order-2 lg:order-2">
                 <span class="text-[10px] uppercase tracking-[0.4em] gold-accent font-bold mb-3 block leading-none">Guía Híbrida</span>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl leading-tight mb-5 italic serif">¡Neta! ¡Así se habla inglés!</h1>
-                
                 <div class="decorative-line"></div>
-
-                <div class="space-y-5 text-slate-700 leading-relaxed text-base lg:text-lg">
-                    <p>
-                        Esta guía híbrida está hecha para hispanohablantes que ya están hartos de estudiar inglés y no sonar naturales al hablarlo. No hay otro recurso como este que te ayude a agarrar la onda más rápido, para que todo el mundo diga de ti: “¡Neta! ¡Así se habla inglés!
-                    </p>
+                <div class="text-slate-700 leading-relaxed text-base lg:text-lg">
+                    <p class="mb-4">Esta guía híbrida está hecha para hispanohablantes que ya están hartos de estudiar inglés y no sonar naturales al hablarlo. No hay otro recurso como este que te ayude a agarrar la onda más rápido, para que todo el mundo diga de ti: “¡Neta! ¡Así se habla inglés!</p>
                     
-                    <div class="text-sm lg:text-base bg-stone-50/50 p-4 rounded-sm border-l border-stone-100">
-                        <p class="font-semibold text-slate-900 mb-2 uppercase text-[11px] tracking-wider">Este programa incluye:</p>
+                    <div class="text-sm lg:text-base bg-stone-50/50 p-3 rounded-sm border-l border-stone-100 my-2">
+                        <p class="font-semibold text-slate-900 mb-1 uppercase text-[11px] tracking-wider">3 recursos. 1 paquete.</p>
                         <ul class="feature-list">
-                            <li><strong>El libro:</strong> guía efectiva para aprender inglés.</li>
-                            <li><strong>Videos:</strong> pronunciación, entonación y ritmo real.</li>
-                            <li><strong>Curso exclusivo:</strong> contenido adicional para reforzar.</li>
+                            <li><strong>Libro:</strong> Un libro físico completo en formato paperback</li>
+                            <li><strong>Videos:</strong> Videos fáciles de entender para cada capítulo</li>
+                            <li><strong>Curso exclusivo:</strong> Un curso privado en línea para aprender inglés</li>
                         </ul>
                     </div>
 
-                    <p class="text-sm lg:text-base italic serif border-l-2 border-stone-200 pl-4 my-6">
+                    <p class="text-sm lg:text-base italic serif border-l-2 border-stone-200 pl-4 mt-4 mb-6">
                         <strong>Importante:</strong> El precio de este libro va a subir muy pronto a $24.99 pero ahora solo es $14.99. ¡Cómpralo ahora!
                     </p>
                 </div>
 
                 <div class="mt-8">
                     <div class="flex flex-col sm:flex-row items-center gap-5 mb-3">
-                        <a href="https://www.amazon.com/dp/B0GDYX1P31" target="_blank" class="cta-prestigious w-full sm:w-auto px-10 py-4 rounded-sm text-center">
-                            Comprar en Amazon
-                        </a>
-                        <span class="text-[10px] uppercase tracking-widest text-slate-600 font-bold">
-                            Paperback Book
-                        </span>
+                        <a href="https://www.amazon.com/dp/B0GDYX1P31" target="_blank" class="cta-prestigious w-full sm:w-auto px-10 py-4 rounded-sm text-center">Comprar en Amazon</a>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-600 font-bold">Paperback Book</span>
                     </div>
                     
                     <p class="text-[11px] text-stone-500 italic">
@@ -140,13 +140,12 @@
         </div>
     </main>
 
-    <footer class="bg-white border-t border-stone-200 py-20 text-center">
+    <footer class="bg-white border-t border-stone-200 py-20 text-center" role="contentinfo">
         <div class="serif italic text-2xl text-slate-800 mb-2 font-medium">LanguagePaisa.com</div>
         <p class="text-[10px] uppercase tracking-[0.3em] text-slate-700">
             © 2026 Language Paisa • All Rights Reserved • 
             <a href="privacy.html" class="underline hover:text-amber-800 transition-colors font-bold">Privacy Policy</a>
         </p>
     </footer>
-
 </body>
 </html>
