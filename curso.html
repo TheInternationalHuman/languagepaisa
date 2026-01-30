@@ -10,6 +10,21 @@
         body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
         
+        /* ADA: Skip Link Style */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: #b08d57;
+            color: white;
+            padding: 15px;
+            z-index: 100;
+            transition: top 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus { top: 0; }
+
         .section-card {
             background-color: #ffffff;
             border: 1px solid #e5e1da;
@@ -34,18 +49,20 @@
 </head>
 <body class="antialiased">
 
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <div class="bg-navy py-2 text-center">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-amber-200/60 font-medium">Excelencia en el Aprendizaje de Idiomas</p>
+        <p class="text-[10px] tracking-[0.4em] uppercase text-amber-200 font-medium">Excelencia en el Aprendizaje de Idiomas</p>
     </div>
 
-    <nav class="py-6 px-12 flex justify-between items-center border-b border-stone-200 bg-white">
-        <a href="index.html" class="text-2xl font-bold tracking-widest uppercase serif italic text-slate-800 transition-all hover:text-amber-800 cursor-pointer">
+    <nav class="py-6 px-12 flex justify-between items-center border-b border-stone-200 bg-white" role="navigation">
+        <a href="index.html" class="text-2xl font-bold tracking-widest uppercase serif italic text-slate-800 transition-all hover:text-amber-800">
             Language Paisa
         </a>
         
         <div class="flex items-center gap-3">
             <div class="text-right">
-                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-400 leading-none mb-1">Established</p>
+                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-600 leading-none mb-1">Established</p>
                 <p class="serif italic text-xs gold-accent">MMXXVI</p>
             </div>
         </div>
@@ -54,43 +71,42 @@
     <header class="max-w-6xl mx-auto pt-24 pb-16 px-8 text-center">
         <span class="text-xs uppercase tracking-[0.4em] gold-accent font-bold mb-4 block">Malla Curricular Académica</span>
         <h1 class="text-5xl md:text-6xl mb-6 leading-tight max-w-3xl mx-auto italic serif">Curso de idioma inglés</h1>
-        <p class="serif italic text-xl text-slate-500 max-w-xl mx-auto">Un programa estructurado para el dominio de la lengua inglesa.</p>
+        <p class="serif italic text-xl text-slate-700 max-w-xl mx-auto">Un programa estructurado para el dominio de la lengua inglesa.</p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-8 pb-32">
+    <main id="main-content" class="max-w-6xl mx-auto px-8 pb-32">
         <div class="space-y-24">
 
             <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
                 <div class="md:col-span-4 relative md:sticky md:top-32">
                     <span class="text-4xl serif italic gold-accent opacity-40">I.</span>
                     <h2 class="text-4xl mt-2 mb-4 serif italic">Sección 1</h2>
-                    <p class="text-sm text-slate-500 leading-relaxed italic">Construyendo los cimientos de la comunicación efectiva y la comprensión auditiva.</p>
                 </div>
                 <div class="md:col-span-8 section-card rounded-sm overflow-hidden">
                     <div class="divide-y divide-stone-100">
-                        <a href="curso/leccion.html?id=leccion1.1" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion1.1" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 1.1">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 1.1</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion1.2" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion1.2" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 1.2">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 1.2</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion1.3" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion1.3" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 1.3">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 1.3</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion1.4" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion1.4" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 1.4">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 1.4</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion1.5" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion1.5" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 1.5">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 1.5</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion1.6" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion1.6" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 1.6">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 1.6</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -100,33 +116,32 @@
                 <div class="md:col-span-4 relative md:sticky md:top-32">
                     <span class="text-4xl serif italic gold-accent opacity-40">II.</span>
                     <h2 class="text-4xl mt-2 mb-4 serif italic">Sección 2</h2>
-                    <p class="text-sm text-slate-500 leading-relaxed italic">Desarrollando fluidez intermedia y dominio de tiempos gramaticales complejos.</p>
-                </div>
+                    </div>
                 <div class="md:col-span-8 section-card rounded-sm overflow-hidden">
                     <div class="divide-y divide-stone-100">
-                        <a href="curso/leccion.html?id=leccion2.1" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion2.1" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 2.1">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 2.1</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion2.2" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion2.2" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 2.2">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 2.2</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion2.3" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion2.3" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 2.3">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 2.3</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion2.4" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion2.4" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 2.4">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 2.4</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion2.5" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion2.5" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 2.5">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 2.5</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion2.6" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion2.6" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 2.6">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 2.6</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -136,33 +151,32 @@
                 <div class="md:col-span-4 relative md:sticky md:top-32">
                     <span class="text-4xl serif italic gold-accent opacity-40">III.</span>
                     <h2 class="text-4xl mt-2 mb-4 serif italic">Sección 3</h2>
-                    <p class="text-sm text-slate-500 leading-relaxed italic">Estrategias de retórica avanzada y perfeccionamiento estilístico de la lengua.</p>
-                </div>
+                    </div>
                 <div class="md:col-span-8 section-card rounded-sm overflow-hidden">
                     <div class="divide-y divide-stone-100">
-                        <a href="curso/leccion.html?id=leccion3.1" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion3.1" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 3.1">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 3.1</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion3.2" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion3.2" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 3.2">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 3.2</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion3.3" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion3.3" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 3.3">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 3.3</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion3.4" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion3.4" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 3.4">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 3.4</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion3.5" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion3.5" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 3.5">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 3.5</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
-                        <a href="curso/leccion.html?id=leccion3.6" class="lesson-item flex items-center justify-between p-6 group">
+                        <a href="curso/leccion.html?id=leccion3.6" class="lesson-item flex items-center justify-between p-6 group" aria-label="Ir a Lección 3.6">
                             <span class="flex-grow text-lg font-medium group-hover:text-amber-900 transition-colors">Lección 3.6</span>
-                            <svg class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -171,9 +185,12 @@
         </div>
     </main>
 
-    <footer class="bg-white border-t border-stone-200 py-20 text-center">
+    <footer class="bg-white border-t border-stone-200 py-20 text-center" role="contentinfo">
         <div class="serif italic text-2xl text-slate-800 mb-2 font-medium">LanguagePaisa.com</div>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400">© 2026 Language Paisa • All Rights Reserved</p>
+        <p class="text-[10px] uppercase tracking-[0.3em] text-slate-700">
+            © 2026 Language Paisa • All Rights Reserved • 
+            <a href="privacy.html" class="underline hover:text-amber-800 transition-colors font-bold">Privacy Policy</a>
+        </p>
     </footer>
 
 </body>
