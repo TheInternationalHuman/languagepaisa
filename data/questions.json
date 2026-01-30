@@ -1,0 +1,53 @@
+{
+  "leccion1.1": [
+    { "question": "¿Cómo se dice 'Yo soy / estoy' en inglés?", "options": ["I am", "I be", "I is"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Yo tengo' en inglés?", "options": ["I having", "I has", "I have"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Yo hago' en inglés?", "options": ["I does", "I do", "I doing"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Yo digo' en inglés?", "options": ["I say", "I says", "I said"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Yo voy' en inglés?", "options": ["I going", "I goes", "I go"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Yo doy' en inglés?", "options": ["I gives", "I give", "I giving"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Yo uso' en inglés?", "options": ["I use", "I uses", "I using"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Yo tomo' en inglés?", "options": ["I takes", "I take", "I taking"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Yo sé / conozco' en inglés?", "options": ["I knowing", "I know", "I knows"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Yo veo' en inglés?", "options": ["I seeing", "I sees", "I see"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Yo vengo' en inglés?", "options": ["I come", "I comes", "I came"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Yo pienso' en inglés?", "options": ["I thinks", "I thinking", "I think"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Yo miro' en inglés?", "options": ["I looking", "I look", "I looks"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Yo quiero' en inglés?", "options": ["I wants", "I wanting", "I want"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Yo consigo' en inglés?", "options": ["I get", "I gets", "I getting"], "correct": 0 }
+  ],
+  "leccion1.2": [
+    { "question": "¿Cómo se dice 'Nosotros somos / estamos' en inglés?", "options": ["We is", "We are", "We be"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Nosotros tenemos' en inglés?", "options": ["We has", "We having", "We have"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Nosotros hacemos' en inglés?", "options": ["We do", "We does", "We doing"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Nosotros decimos' en inglés?", "options": ["We says", "We say", "We said"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Nosotros vamos' en inglés?", "options": ["We goes", "We going", "We go"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Nosotros damos' en inglés?", "options": ["We gives", "We giving", "We give"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Nosotros usamos' en inglés?", "options": ["We use", "We uses", "We using"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Nosotros tomamos' en inglés?", "options": ["We takes", "We taking", "We take"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Nosotros sabemos / conocemos' en inglés?", "options": ["We know", "We knows", "We knowing"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Nosotros vemos' en inglés?", "options": ["We sees", "We seeing", "We see"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Nosotros venimos' en inglés?", "options": ["We comes", "We come", "We came"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Nosotros pensamos' en inglés?", "options": ["We thinking", "We thinks", "We think"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Nosotros miramos' en inglés?", "options": ["We look", "We looks", "We looking"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Nosotros queremos' en inglés?", "options": ["We wants", "We want", "We wanting"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Nosotros conseguimos' en inglés?", "options": ["We getting", "We get", "We gets"], "correct": 1 }
+  ],
+  "leccion1.3": [
+    { "question": "¿Cómo se dice 'Eres' en inglés?", "options": ["You is", "You are", "You be"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Tienes' en inglés?", "options": ["You have", "You has", "You having"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Haces' en inglés?", "options": ["You does", "You doing", "You do"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Dices' en inglés?", "options": ["You says", "You say", "You said"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Vas' en inglés?", "options": ["You go", "You goes", "You going"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Das' en inglés?", "options": ["You gives", "You giving", "You give"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Usas' en inglés?", "options": ["You use", "You uses", "You using"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Tomas' en inglés?", "options": ["You takes", "You take", "You taking"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Sabes' en inglés?", "options": ["You knows", "You knowing", "You know"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Ves' en inglés?", "options": ["You see", "You sees", "You seeing"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Vienes' en inglés?", "options": ["You comes", "You came", "You come"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Piensas' en inglés?", "options": ["You think", "You thinks", "You thinking"], "correct": 0 },
+    { "question": "¿Cómo se dice 'Miras' en inglés?", "options": ["You looks", "You looking", "You look"], "correct": 2 },
+    { "question": "¿Cómo se dice 'Quieres' en inglés?", "options": ["You wants", "You want", "You wanting"], "correct": 1 },
+    { "question": "¿Cómo se dice 'Consigues' en inglés?", "options": ["You getting", "You gets", "You get"], "correct": 2 }
+  ]
+}

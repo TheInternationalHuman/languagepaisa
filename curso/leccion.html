@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Académica — Language Paisa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; margin: 0; }
+        h1, h2, .serif { font-family: 'Playfair Display', serif; }
+        .bg-navy { background-color: #0a192f; }
+        .gold-accent { color: #b08d57; }
+        .quiz-container { max-width: 700px; margin: 0 auto; }
+        .question-card { background: white; border: 1px solid #e7e5e4; padding: 2rem; border-radius: 4px; margin-bottom: 2rem; }
+        .option-btn { width: 100%; text-align: left; padding: 1rem 1.5rem; margin-bottom: 0.5rem; border: 1px solid #e7e5e4; border-radius: 4px; transition: all 0.2s; background: white; }
+        .option-btn:hover { border-color: #b08d57; background-color: #fcfaf7; }
+        .option-btn.selected { background-color: #0a192f; color: white; border-color: #0a192f; }
+        .submit-btn { background-color: #0a192f; color: white; padding: 1rem 3rem; border-radius: 4px; font-weight: 600; transition: all 0.3s; }
+        .submit-btn:hover { background-color: #b08d57; transform: translateY(-2px); }
+        .feedback { margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none; }
+        .correct { display: block; background-color: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+        .incorrect { display: block; background-color: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+        .score-display { font-size: 4rem; font-weight: 700; color: #0a192f; }
+    </style>
+</head>
+<body>
+    <nav class="bg-navy py-6 px-8 mb-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="../curso.html" class="text-white serif italic text-2xl tracking-tight">Language Paisa</a>
+            <span class="text-stone-400 text-sm tracking-widest uppercase">Evaluación Académica</span>
+        </div>
+    </nav>
+
+    <main class="quiz-container px-4 pb-24">
+        <header class="mb-16 text-center">
+            <h1 id="lessonTitle" class="text-4xl md:text-5xl mb-4">Cargando Lección...</h1>
+            <div class="w-24 h-1 bg-stone-200 mx-auto"></div>
+        </header>
+
+        <div id="questionsWrapper">
+            </div>
+
+        <div class="text-center mt-12">
+            <button id="submitBtn" class="submit-btn">Finalizar Evaluación</button>
+        </div>
+    </main>
+
+    <script>
+        let questions = [];
+        let userAnswers = {};
+
+        async function loadLesson() {
+            // 1. Figure out which lesson to show from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const lessonId = urlParams.get('id'); // Looks for ?id=leccion1.1
+
+            if (!lessonId) {
+                document.getElementById('lessonTitle').textContent = "Lección no encontrada";
+                return;
+            }
+
+            try {
+                const response = await fetch('../data/questions.json');
+                const allData = await response.json();
+                
+                questions = allData[lessonId];
+                
+                if (!questions) {
+                    document.getElementById('lessonTitle').textContent = "Error: Lección vacía";
+                    return;
+                }
+
+                document.getElementById('lessonTitle').textContent = "Evaluación " + lessonId.replace('leccion', 'Lección ');
+                renderQuestions();
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('lessonTitle').textContent = "Error al cargar datos";
+            }
+        }
+
+        function renderQuestions() {
+            const wrapper = document.getElementById('questionsWrapper');
+            wrapper.innerHTML = '';
+            questions.forEach((q, index) => {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.innerHTML = `
+                    <h3 class="text-xl mb-4 font-semibold">${index + 1}. ${q.question}</h3>
+                    <div class="space-y-3">
+                        ${q.options.map((opt, i) => `
+                            <button class="option-btn" onclick="selectOption(${index}, ${i}, this)">${opt}</button>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${index}" class="feedback"></div>
+                `;
+                wrapper.appendChild(card);
+            });
+        }
+
+        function selectOption(qIdx, oIdx, btn) {
+            userAnswers[qIdx] = oIdx;
+            const buttons = btn.parentElement.querySelectorAll('.option-btn');
+            buttons.forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        }
+
+        document.getElementById('submitBtn').addEventListener('click', () => {
+            if (Object.keys(userAnswers).length < questions.length) {
+                alert("Por favor, responde todas las preguntas.");
+                return;
+            }
+            let correct = 0;
+            questions.forEach((q, index) => {
+                const feedback = document.getElementById(`feedback-${index}`);
+                if (userAnswers[index] === q.correct) {
+                    correct++;
+                    feedback.className = 'feedback correct';
+                    feedback.textContent = '✓ Correcto';
+                } else {
+                    feedback.className = 'feedback incorrect';
+                    feedback.textContent = `✗ Incorrecto. La respuesta es: ${q.options[q.correct]}`;
+                }
+            });
+            showResults(correct);
+        });
+
+        function showResults(correct) {
+            document.getElementById('submitBtn').style.display = 'none';
+            const resultsSummary = document.createElement('div');
+            resultsSummary.className = 'text-center bg-white border border-stone-200 p-8 mb-8 rounded';
+            const score = Math.round((correct / questions.length) * 100);
+            resultsSummary.innerHTML = `
+                <h2 class="serif italic text-3xl mb-4">Resultados</h2>
+                <div class="score-display">${correct}/${questions.length}</div>
+                <p class="text-xl mt-4 mb-6">${score}% completado</p>
+                <button onclick="location.reload()" class="submit-btn">Intentar de Nuevo</button>
+            `;
+            const wrapper = document.getElementById('questionsWrapper');
+            wrapper.insertBefore(resultsSummary, wrapper.firstChild);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        loadLesson();
+    </script>
+</body>
+</html>
