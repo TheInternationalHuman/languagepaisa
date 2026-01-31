@@ -11,29 +11,13 @@
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
         
         .skip-link {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            background: #b08d57;
-            color: white;
-            padding: 15px;
-            z-index: 100;
-            transition: top 0.3s;
-            text-decoration: none;
-            font-weight: bold;
+            position: absolute; top: -100px; left: 0; background: #b08d57; color: white;
+            padding: 15px; z-index: 100; transition: top 0.3s; text-decoration: none; font-weight: bold;
         }
         .skip-link:focus { top: 0; }
 
-        .section-card {
-            background-color: #ffffff;
-            border: 1px solid #e5e1da;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-        }
-
-        .lesson-item {
-            border-bottom: 1px solid #f0ede8;
-            transition: all 0.3s ease;
-        }
+        .section-card { background-color: #ffffff; border: 1px solid #e5e1da; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+        .lesson-item { border-bottom: 1px solid #f0ede8; transition: all 0.3s ease; }
         .lesson-item:last-child { border-bottom: none; }
 
         .gold-accent { color: #b08d57; }
@@ -41,33 +25,16 @@
 
         /* Button Styles */
         .btn-study {
-            border: 1px solid #e5e1da;
-            color: #64748b;
-            font-size: 10px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: all 0.2s ease;
+            border: 1px solid #e5e1da; color: #64748b; font-size: 10px; letter-spacing: 0.1em;
+            text-transform: uppercase; font-weight: 600; transition: all 0.2s ease;
         }
-        .btn-study:hover {
-            border-color: #b08d57;
-            color: #b08d57;
-            background: #fdfaf3;
-        }
+        .btn-study:hover { border-color: #b08d57; color: #b08d57; background: #fdfaf3; }
 
         .btn-quiz {
-            background-color: #0a192f;
-            color: white;
-            font-size: 10px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: all 0.2s ease;
+            background-color: #0a192f; color: white; font-size: 10px; letter-spacing: 0.1em;
+            text-transform: uppercase; font-weight: 600; transition: all 0.2s ease;
         }
-        .btn-quiz:hover {
-            background-color: #b08d57;
-            transform: translateY(-1px);
-        }
+        .btn-quiz:hover { background-color: #b08d57; transform: translateY(-1px); }
     </style>
 </head>
 <body class="antialiased">
@@ -82,16 +49,19 @@
         <a href="index.html" class="text-2xl font-bold tracking-widest uppercase serif italic text-slate-800 transition-all hover:text-amber-800">
             Language Paisa
         </a>
-        <div class="text-right">
-            <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-600 leading-none mb-1">Established</p>
-            <p class="serif italic text-xs gold-accent">MMXXVI</p>
+        
+        <div class="flex items-center gap-3">
+            <div class="text-right">
+                <p class="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-600 leading-none mb-1">Established</p>
+                <p class="serif italic text-xs gold-accent">MMXXVI</p>
+            </div>
         </div>
     </nav>
 
     <header class="max-w-6xl mx-auto pt-24 pb-16 px-8 text-center">
         <span class="text-xs uppercase tracking-[0.4em] gold-accent font-bold mb-4 block">Malla Curricular Académica</span>
         <h1 class="text-5xl md:text-6xl mb-6 leading-tight max-w-3xl mx-auto italic serif">Curso de idioma inglés</h1>
-        <p class="serif italic text-xl text-slate-700 max-w-xl mx-auto">Revisa el material de estudio antes de tomar tu evaluación.</p>
+        <p class="serif italic text-xl text-slate-700 max-w-xl mx-auto">Un programa estructurado para el dominio de la lengua inglesa.</p>
     </header>
 
     <main id="main-content" class="max-w-6xl mx-auto px-8 pb-32">
@@ -132,6 +102,20 @@
                                 <a href="curso/leccion.html?id=leccion1.4" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
                             </div>
                         </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 1.5</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion1.5" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion1.5" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 1.6</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion1.6" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion1.6" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,6 +139,87 @@
                             <div class="flex gap-3 w-full sm:w-auto">
                                 <a href="curso/estudio.html?id=leccion2.2" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
                                 <a href="curso/leccion.html?id=leccion2.2" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 2.3</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion2.3" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion2.3" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 2.4</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion2.4" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion2.4" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 2.5</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion2.5" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion2.5" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 2.6</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion2.6" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion2.6" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+                <div class="md:col-span-4 relative md:sticky md:top-32">
+                    <span class="text-4xl serif italic gold-accent opacity-40">III.</span>
+                    <h2 class="text-4xl mt-2 mb-4 serif italic">Sección 3</h2>
+                </div>
+                <div class="md:col-span-8 section-card rounded-sm overflow-hidden">
+                    <div class="divide-y divide-stone-100">
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 3.1</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion3.1" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion3.1" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 3.2</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion3.2" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion3.2" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 3.3</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion3.3" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion3.3" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 3.4</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion3.4" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion3.4" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 3.5</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion3.5" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion3.5" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
+                            </div>
+                        </div>
+                        <div class="lesson-item flex flex-col sm:flex-row items-center justify-between p-6 gap-4">
+                            <span class="text-lg font-medium text-slate-800">Lección 3.6</span>
+                            <div class="flex gap-3 w-full sm:w-auto">
+                                <a href="curso/estudio.html?id=leccion3.6" class="btn-study px-5 py-2.5 rounded-sm flex-1 text-center">Estudiar</a>
+                                <a href="curso/leccion.html?id=leccion3.6" class="btn-quiz px-5 py-2.5 rounded-sm flex-1 text-center">Examen</a>
                             </div>
                         </div>
                     </div>
