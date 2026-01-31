@@ -10,8 +10,8 @@
         body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         .bg-navy { background-color: #0a192f; }
-        .study-card { background: white; border: 1px solid #e7e5e4; border-radius: 4px; }
         .gold-accent { color: #b08d57; }
+        .study-card { background: white; border: 1px solid #e7e5e4; border-radius: 4px; }
         .back-link { transition: all 0.3s ease; letter-spacing: 0.1em; }
         .back-link:hover { color: #b08d57 !important; padding-left: 5px; }
     </style>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="mt-16 p-8 bg-white border-2 border-stone-100 text-center rounded-sm">
-            <h3 class="serif italic text-2xl mb-6">¿Dominas estos conceptos?</h3>
+            <h3 class="serif italic text-2xl mb-6">¿Estás listo?</h3>
             <button onclick="goToQuiz()" class="bg-[#0a192f] hover:bg-[#b08d57] text-white px-10 py-4 uppercase tracking-widest text-xs font-bold transition-all">
                 Iniciar Evaluación
             </button>
@@ -67,12 +67,10 @@
         async function loadStudyGuide() {
             if (!lessonId) return;
 
-            // Display title formatting
             const displayTitle = lessonId.replace('leccion', 'Lección ').replace('.', '.');
             document.getElementById('lessonTitle').textContent = `Guía de Estudio: ${displayTitle}`;
 
             try {
-                // Fetch the real questions.json
                 const response = await fetch('../data/questions.json');
                 const allData = await response.json();
                 const questions = allData[lessonId];
@@ -80,23 +78,20 @@
                 const wrapper = document.getElementById('studyWrapper');
                 
                 if (!questions) {
-                    wrapper.innerHTML = `<div class="p-8 bg-red-50 text-red-800 border border-red-100">No se encontró contenido para esta lección en el sistema.</div>`;
+                    wrapper.innerHTML = `<div class="p-8 bg-red-50 text-red-800 border border-red-100">No se encontró contenido para esta lección.</div>`;
                     return;
                 }
 
                 wrapper.innerHTML = '';
 
                 questions.forEach((q, index) => {
-                    // Extract the text of the correct option based on the 'correct' index in JSON
                     const correctText = q.options[q.correct];
                     
                     const card = document.createElement('div');
                     card.className = 'study-card p-6 md:p-8';
                     card.innerHTML = `
-                        <div class="text-[9px] uppercase tracking-[0.3em] gold-accent font-bold mb-4">Pregunta de Examen ${index + 1}</div>
-                        <p class="text-xl font-semibold mb-6 text-slate-800">${q.question}</p>
-                        <div class="bg-stone-50 p-5 border-l-4 border-green-600">
-                            <p class="text-[10px] uppercase tracking-widest text-green-700 font-bold mb-1">Respuesta Correcta:</p>
+                        <p class="text-xl font-semibold mb-4 text-slate-800">${index + 1}. ${q.question}</p>
+                        <div class="bg-stone-50 p-5 border-l-4 border-[#0a192f]">
                             <p class="text-slate-900 text-lg">${correctText}</p>
                         </div>
                     `;
