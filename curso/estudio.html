@@ -7,73 +7,105 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; }
+        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; color: #1c1c1c; margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         .bg-navy { background-color: #0a192f; }
-        .study-card { background: white; border: 1px solid #e7e5e4; transition: all 0.3s ease; }
-        .study-card:hover { border-color: #b08d57; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .study-card { background: white; border: 1px solid #e7e5e4; border-radius: 4px; }
+        .gold-accent { color: #b08d57; }
+        .back-link { transition: all 0.3s ease; letter-spacing: 0.1em; }
+        .back-link:hover { color: #b08d57 !important; padding-left: 5px; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
-
-    <div class="bg-navy py-2 text-center">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-amber-200 font-medium">Material de Preparación</p>
+    <div class="bg-navy py-1.5 text-center">
+        <p class="text-[9px] tracking-[0.4em] uppercase text-yellow-100/80 font-medium">Portal de Estudiantes</p>
     </div>
 
-    <main class="max-w-3xl mx-auto w-full px-6 py-16 flex-grow">
-        <a href="../curso.html" class="text-xs uppercase tracking-widest text-stone-500 hover:text-black mb-8 inline-block">← Volver al curso</a>
+    <nav class="py-6 px-6 md:px-12 flex justify-between items-center border-b border-stone-200 bg-white">
+        <div class="text-xl md:text-2xl font-bold tracking-widest uppercase serif italic text-slate-800">Language Paisa</div>
+        <div class="text-right">
+            <p class="text-[8px] uppercase tracking-[0.3em] font-bold text-slate-400 leading-none mb-1">Established</p>
+            <p class="serif italic text-xs gold-accent">MMXXVI</p>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto w-full px-6 py-12 flex-grow">
+        <div class="mb-10">
+            <a href="../curso.html" class="back-link text-[10px] uppercase font-bold text-slate-400 flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Volver a la Malla Curricular
+            </a>
+        </div>
         
         <header class="mb-12">
-            <h1 id="lessonTitle" class="text-4xl serif italic mb-2">Guía de Estudio</h1>
-            <p class="text-stone-500 italic">Revisa estos conceptos antes de tomar tu evaluación.</p>
+            <span id="sectionLabel" class="text-[10px] uppercase tracking-[0.4em] gold-accent font-bold mb-3 block">Guía de Preparación</span>
+            <h1 id="lessonTitle" class="text-4xl md:text-5xl serif italic mb-4 text-slate-900 text-center md:text-left">Cargando Lección...</h1>
+            <p class="text-stone-500 italic serif text-lg">Revisa las respuestas correctas para dominar esta lección antes de tu evaluación.</p>
         </header>
 
         <div id="studyWrapper" class="space-y-6">
-            </div>
+            <p class="text-center py-20 text-stone-400 italic">Sincronizando material de estudio...</p>
+        </div>
 
-        <div class="mt-16 p-8 bg-stone-100 text-center rounded-sm border border-stone-200">
-            <h3 class="serif italic text-2xl mb-4">¿Te sientes listo?</h3>
-            <button onclick="goToQuiz()" class="bg-navy text-white px-10 py-4 uppercase tracking-widest text-xs font-bold hover:bg-slate-800 transition-all">
-                Ir al Examen Ahora
+        <div class="mt-16 p-8 bg-white border-2 border-stone-100 text-center rounded-sm">
+            <h3 class="serif italic text-2xl mb-6">¿Dominas estos conceptos?</h3>
+            <button onclick="goToQuiz()" class="bg-[#0a192f] hover:bg-[#b08d57] text-white px-10 py-4 uppercase tracking-widest text-xs font-bold transition-all">
+                Iniciar Evaluación
             </button>
         </div>
     </main>
 
-    <script>
-        // Use the same Data structure we used for the Quiz!
-        const lessonData = {
-            "leccion1.1": {
-                title: "Lección 1.1: Slang Básico",
-                content: [
-                    { q: "What does 'Neta' mean?", a: "It means 'Really?' or 'The truth'." },
-                    { q: "How do you use '¿Qué onda?'", a: "It is a casual 'What's up?' used with friends." },
-                    { q: "Meaning of 'Chido'", a: "Cool or nice. Very common in Mexico." }
-                ]
-            }
-            // Add more lessons here...
-        };
+    <footer class="border-t border-stone-200 py-12 bg-white text-center mt-20">
+        <div class="serif italic text-xl text-slate-800 font-medium">LanguagePaisa.com</div>
+        <p class="text-[10px] uppercase tracking-[0.3em] text-slate-400">© 2026 Language Paisa • All Rights Reserved</p>
+    </footer>
 
+    <script>
         const urlParams = new URLSearchParams(window.location.search);
         const lessonId = urlParams.get('id');
 
-        function loadStudyGuide() {
-            const data = lessonData[lessonId];
-            if (!data) return;
+        async function loadStudyGuide() {
+            if (!lessonId) return;
 
-            document.getElementById('lessonTitle').innerText = data.title;
-            const wrapper = document.getElementById('studyWrapper');
+            // Display title formatting
+            const displayTitle = lessonId.replace('leccion', 'Lección ').replace('.', '.');
+            document.getElementById('lessonTitle').textContent = `Guía de Estudio: ${displayTitle}`;
 
-            data.content.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'study-card p-6 rounded-sm';
-                card.innerHTML = `
-                    <div class="text-[10px] uppercase tracking-widest gold-accent font-bold mb-2">Concepto ${index + 1}</div>
-                    <p class="text-xl serif italic mb-3 text-slate-900">${item.q}</p>
-                    <div class="h-[1px] w-8 bg-stone-200 mb-3"></div>
-                    <p class="text-slate-600 leading-relaxed">${item.a}</p>
-                `;
-                wrapper.appendChild(card);
-            });
+            try {
+                // Fetch the real questions.json
+                const response = await fetch('../data/questions.json');
+                const allData = await response.json();
+                const questions = allData[lessonId];
+
+                const wrapper = document.getElementById('studyWrapper');
+                
+                if (!questions) {
+                    wrapper.innerHTML = `<div class="p-8 bg-red-50 text-red-800 border border-red-100">No se encontró contenido para esta lección en el sistema.</div>`;
+                    return;
+                }
+
+                wrapper.innerHTML = '';
+
+                questions.forEach((q, index) => {
+                    // Extract the text of the correct option based on the 'correct' index in JSON
+                    const correctText = q.options[q.correct];
+                    
+                    const card = document.createElement('div');
+                    card.className = 'study-card p-6 md:p-8';
+                    card.innerHTML = `
+                        <div class="text-[9px] uppercase tracking-[0.3em] gold-accent font-bold mb-4">Pregunta de Examen ${index + 1}</div>
+                        <p class="text-xl font-semibold mb-6 text-slate-800">${q.question}</p>
+                        <div class="bg-stone-50 p-5 border-l-4 border-green-600">
+                            <p class="text-[10px] uppercase tracking-widest text-green-700 font-bold mb-1">Respuesta Correcta:</p>
+                            <p class="text-slate-900 text-lg">${correctText}</p>
+                        </div>
+                    `;
+                    wrapper.appendChild(card);
+                });
+            } catch (e) {
+                console.error("Error loading study guide:", e);
+                document.getElementById('studyWrapper').innerHTML = `<div class="p-8 text-center text-stone-400 italic">Error al cargar el archivo de datos.</div>`;
+            }
         }
 
         function goToQuiz() {
