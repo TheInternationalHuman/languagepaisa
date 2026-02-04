@@ -372,7 +372,7 @@
     { "question": "¿Cómo se dice 'Ustedes van a mirar'?", "options": ["You go to look", "You is look", "You are going to look"], "correct": 2 },
     { "question": "¿Cómo se dice 'Ustedes van a querer'?", "options": ["You are going to want", "You go to want", "You wanting"], "correct": 0 },
     { "question": "¿Cómo se dice 'Ustedes van a conseguir'?", "options": ["You are going get", "You are going to get", "You go to get"], "correct": 1 }
-  ]
+  ],
   "leccion4.5": [
     { "question": "¿Cómo se dice 'Él/Ella va a ser / estar'?", "options": ["He/She go to be", "He/She is going to be", "He/She are going to be"], "correct": 1 },
     { "question": "¿Cómo se dice 'Él/Ella va a tener'?", "options": ["He/She is going to have", "He/She go to have", "He/She having"], "correct": 0 },
