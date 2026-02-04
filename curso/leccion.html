@@ -80,7 +80,7 @@
             document.getElementById('lessonTitle').textContent = `Sección 1 • ${displayTitle}`;
 
             try {
-                const response = await fetch('../data/questions.json');
+                const response = await fetch('/data/questions.json');
                 const allData = await response.json();
                 currentQuestions = allData[lessonId];
                 userAnswers = new Array(currentQuestions.length).fill(null);

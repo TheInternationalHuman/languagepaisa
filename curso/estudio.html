@@ -71,7 +71,7 @@
             document.getElementById('lessonTitle').textContent = `Guía de Estudio: ${displayTitle}`;
 
             try {
-                const response = await fetch('../data/questions.json');
+                const response = await fetch('/data/questions.json');
                 const allData = await response.json();
                 const questions = allData[lessonId];
 
